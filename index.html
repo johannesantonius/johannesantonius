@@ -4,38 +4,48 @@
 <body>
 
   <h1 style="background-color:powderblue;">dit is mijn homepage </h1>
-<p1> dit is een paragraaf </p1>
+<p> dit is een paragraaf </p>
 <style>
 h1{color:blue:
  font-family:verdana;
  font-size:300 %;
  text-align:center;
 }
+}
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+
 p1{color:blue}
 body{background-color:powderblue}
 button{ background-color:rgb(0, 255, 0) ;
   color:rgb(255, 0, 0);
-  padding-bottom:5 px;
+  padding-bottom:5px;
   border:none;
-  border-radius:1 px;
+  border-radius:1px;
   cursor:grab;
   position:fixed;
-bottom: 20 px;
-left: 250 px;
+bottom: 20px;
+left: 250px;
 
 }
 
 
 </style>
+<div class="button-container">
+  <button onclick="redirectToPage2()">Ga naar pagina 2</button>
+  <button onclick="redirectTobinairstelsel()">Binairstelsel</button>
+</div>
 
-<button onclick="redirectToPage2()">ga naar pagina 2</button>
 <script>
     function redirectToPage2() {
        
         window.location.href = "page2.html";
     }
 </script>
-  <button onclick="redirectTobinairstelsel()">binairstelsel </button>
+ 
 <script>
     function redirectTobinairstelsel() {
        
