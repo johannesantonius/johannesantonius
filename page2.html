@@ -1,44 +1,65 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <title>Hoe werkt een computer</title>
+</head>
 <body>
-<h1> Hoe werkt een computer </h1>
-<p>invoer</p>
-    <p>uitvoer</p>
-    <p>verwerking</p>
-    <p>informatie</p>
-    <p>gegevens</p>
-<style>
-   footer{
-       text-align:center;
-       background-color:red;
-       padding: 3px;
-       color:white;
-   }
-    h1{color:rgb(30, 255, 0):
-     font-family:verdana;
-     font-size:300%;
+  <div class="header-container">
+    <h1> Hoe werkt een computer </h1>
+  </div>
+  <p>invoer</p>
+  <p>uitvoer</p>
+  <p>verwerking</p>
+  <p>informatie</p>
+  <p>gegevens</p>
+  <style>
+    footer {
+      text-align: center;
+      background-color: red;
+      padding: 3px;
+      color: white;
     }
-    p1{color:rgb(30, 255, 0)}
-    body{background-color:rgb(255, 0, 0)
-        button{ background-color:rgb(0, 255, 0) ;
-  color:rgb(255, 0, 0);
-  padding-bottom:5 px;
-  border:none;
-  border-radius:1 px;
-  cursor:grab;
-  position:fixed;
-bottom: 100px;
-left: 1500px;
-}
- 
 
- 
- 
- 
- </style>
-<footer><p> versie 1</p></footer>
-<img src="foto github.jpeg">
+    h1 {
+     font-family: verdana;
+      font-size: 300%;
+      text-align: center;
+    }
 
-<div class="button-container">
+    p1 {
+      color: powderblue;
+      text-align: center;
+    }
+
+    body {
+      background-color: powderblue;
+    }
+
+    button {
+      background-color: rgb(0, 255, 0);
+      color: rgb(255, 0, 0);
+      padding-bottom: 5px;
+      border: none;
+      border-radius: 1px;
+      cursor: grab;
+      margin: 10px;
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      align-items: center;
+    }
+  </style>
+  <footer><p> versie 1</p></footer>
+  <div class="button-container">
     <button onclick="redirectToIndexPage()">Ga naar de homepage</button>
     <button onclick="redirectToBinairestelsel()">Ga naar Binairestelsel</button>
   </div>
@@ -46,24 +67,10 @@ left: 1500px;
     function redirectToIndexPage() {
       window.location.href = "index.html";
     }
-  
+
     function redirectToBinairestelsel() {
       window.location.href = "binairestelsel.html";
     }
   </script>
-    
-
-
 </body>
-
-
-
-
-
-
-
-
-
-
-
 </html>
