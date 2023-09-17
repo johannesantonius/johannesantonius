@@ -2,67 +2,23 @@
 <html>
 <head>
   <title>Hoe werkt een computer</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div class="header-container">
-    <h1> Hoe werkt een computer </h1>
-  </div>
-
-  <style>
- footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  text-align: center;
-  padding: 3px;
-  color: white;
-}
-
-
-    h1 {
-     font-family: verdana;
-      font-size: 150%;
-      text-align: center;
-    }
-
-    p1 {
-      color: powderblue;
-      text-align: center;
-    }
-
-    body {
-      background-color: powderblue;
-    }
-
-    button {
-      background-color: rgb(0, 255, 0);
-      color: rgb(255, 0, 0);
-      padding-bottom: 5px;
-      border: none;
-      border-radius: 1px;
-      cursor: grab;
-      margin: 10px;
-    }
-
-    .header-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      align-items: center;
-    }
-  </style>
+  <h1>Hoe werkt een computer</h1>
+  <p>invoer</p>
+  <p>uitvoer</p>
+  <p>verwerking</p>
+  <p>informatie</p>
+  <p>gegevens</p>
 
   <div class="button-container">
     <button onclick="redirectToIndexPage()">Ga naar de homepage</button>
     <button onclick="redirectToBinairestelsel()">Ga naar Binairestelsel</button>
   </div>
+
+  <footer><p>versie 1</p></footer>
+
   <script>
     function redirectToIndexPage() {
       window.location.href = "index.html";
@@ -72,11 +28,5 @@
       window.location.href = "binairestelsel.html";
     }
   </script>
-    <p>invoer</p>
-    <p>uitvoer</p>
-    <p>verwerking</p>
-    <p>informatie</p>
-    <p>gegevens</p>
-    <footer><p> versie 1</p></footer>
 </body>
 </html>
