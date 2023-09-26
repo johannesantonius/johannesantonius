@@ -13,28 +13,23 @@ p1 {
 body {
   background-color: powderblue;
 }
-
-button {
-  background-color: rgb(0, 255, 0);
-  color: rgb(255, 0, 0);
-  padding-bottom: 5px;
-  border: none;
-  border-radius: 1px;
-  cursor: grab;
-  margin: 10px;
-}
-
-.header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Stijl voor de knoppen */
 .button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  align-items: center;
+  display: flex; /* Hiermee worden de knoppen naast elkaar geplaatst */
+  gap: 10px; /* Voegt wat ruimte tussen de knoppen toe */
+}
+
+.button-container button {
+  background-color: #333; /* Achtergrondkleur van de knoppen */
+  color: #fff; /* Tekstkleur van de knoppen */
+  border: none; /* Verwijder de standaard knoprand */
+  padding: 10px 20px; /* Binnenste opvulling van de knoppen */
+  cursor: pointer; /* Verander de cursor bij hoveren naar een handje */
+  transition: background-color 0.3s; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
+}
+
+.button-container button:hover {
+  background-color: #000; /* Verander de achtergrondkleur bij hoveren naar zwart */
 }
 
 footer {
