@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>homepage</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>dit is mijn homepage</h1>
+  <h1>kleurmodellen</h1>
 
   <div class="button-container">
     <button onclick="redirectToPage2()">Ga naar pagina 2</button>
     <button onclick="redirectTobinairestelsel()">Binairestelsel</button>
+    <button onclick="redirectToKleurmodellen()">Kleurmodellen</button> <!-- Nieuwe knop voor kleurmodellen.html -->
   </div>
 
   <p>dit is een paragraaf</p>
 
-  <footer> <footer><div>
-    <p>dirk straathof</p>
-    <p>versie 1 </p>
-  </div></footer></footer>
+  <footer>
+    <div>
+      <p>dirk straathof</p>
+      <p>versie 1</p>
+    </div>
+  </footer>
 
   <script>
     function redirectToPage2() {
@@ -26,6 +28,11 @@
 
     function redirectTobinairestelsel() {
       window.location.href = "binairestelsel.html";
+    }
+
+    // Functie om naar kleurmodellen.html te gaan (vervang "kleurmodellen.html" door de daadwerkelijke pagina-URL)
+    function redirectToKleurmodellen() {
+      window.location.href = "kleurmodellen.html";
     }
   </script>
 </body>
