@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Kleurmodellen</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-  <h1>kleurmodellen</h1>
+  <h1>Kleurmodellen</h1>
 
   <div class="button-container">
+    <button onclick="redirectToIndexPage()">Ga naar de homepage</button>
     <button onclick="redirectToPage2()">Ga naar pagina 2</button>
-    <button onclick="redirectTobinairestelsel()">Binairestelsel</button>
-    <button onclick="redirectToindex()">homepage</button> 
+    <button onclick="redirectToBinairestelsel()">Ga naar Binairestelsel</button>
   </div>
 
-  <p>dit is een paragraaf</p>
+  <p>Enkele teksten over kleurmodellen...</p>
 
   <footer>
     <div>
@@ -22,17 +23,17 @@
   </footer>
 
   <script>
+    function redirectToIndexPage() {
+      window.location.href = "index.html";
+    }
+
     function redirectToPage2() {
       window.location.href = "page2.html";
     }
 
-    function redirectTobinairestelsel() {
+    function redirectToBinairestelsel() {
       window.location.href = "binairestelsel.html";
     }
-
-    function redirectToOtherPage() {
-      window.location.href = "index.html";
-    }
   </script>
-</body>
+</body> 
 </html>
