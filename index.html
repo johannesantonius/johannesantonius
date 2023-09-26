@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>homepage</h1>
+  <h1>Homepage</h1>
 
-  <div class="menu">
-    <button class="menu-button" onclick="redirectToPage2()">Ga naar pagina 2</button>
-    <button class="menu-button" onclick="redirectTobinairestelsel()">Binairestelsel</button>
-    <button class="menu-button" onclick="redirectToKleurmodellen()">Kleurmodellen</button> 
+  <div class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+      <a href="page2.html">Ga naar pagina 2</a>
+      <a href="binairestelsel.html">Binairestelsel</a>
+      <a href="kleurmodellen.html">Kleurmodellen</a>
+    </div>
   </div>
 
-  <p>dit is een paragraaf</p>
+  <p>Dit is een paragraaf.</p>
 
   <footer>
     <div>
-      <p>dirk straathof</p>
-      <p>versie 1</p>
+      <p>Dirk Straathof</p>
+      <p>Versie 1</p>
     </div>
   </footer>
-
-  <script>
-    function redirectToPage2() {
-      window.location.href = "page2.html";
-    }
-
-    function redirectTobinairestelsel() {
-      window.location.href = "binairestelsel.html";
-    }
-
-    
-    function redirectToKleurmodellen() {
-      window.location.href = "kleurmodellen.html";
-    }
-  </script>
 </body>
 </html>
