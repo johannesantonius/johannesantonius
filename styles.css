@@ -5,7 +5,7 @@ h1 {
   text-align: center;
 }
 
-p1 {
+p {
   color: powderblue;
   text-align: center;
 }
@@ -13,23 +13,24 @@ p1 {
 body {
   background-color: powderblue;
 }
-/* Stijl voor de knoppen */
+
+
 .button-container {
-  display: flex; /* Hiermee worden de knoppen naast elkaar geplaatst */
-  gap: 10px; /* Voegt wat ruimte tussen de knoppen toe */
+  display: flex;
+  gap: 10px;
 }
 
 .button-container button {
-  background-color: #333; /* Achtergrondkleur van de knoppen */
-  color: #fff; /* Tekstkleur van de knoppen */
-  border: none; /* Verwijder de standaard knoprand */
-  padding: 10px 20px; /* Binnenste opvulling van de knoppen */
-  cursor: pointer; /* Verander de cursor bij hoveren naar een handje */
-  transition: background-color 0.3s; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button-container button:hover {
-  background-color: #000; /* Verander de achtergrondkleur bij hoveren naar zwart */
+  background-color: #000;
 }
 
 footer {
@@ -43,8 +44,8 @@ footer {
 }
 
 img {
-  width: 100px; 
-  height: 100px; 
+  width: 100px;
+  height: 100px;
 }
 
 .menu {
@@ -60,7 +61,6 @@ img {
   padding: 10px;
   border: 1px solid #e41616;
 }
-
 
 .menu:hover .menu-button {
   display: block;
