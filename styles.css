@@ -46,3 +46,22 @@ img {
   width: 100px; 
   height: 100px; 
 }
+
+.menu {
+  position: relative;
+}
+
+.menu-button {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  padding: 10px;
+  border: 1px solid #666;
+}
+
+
+.menu:hover .menu-button {
+  display: block;
+}
