@@ -104,3 +104,9 @@ img {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+a.active {
+    font-weight: bold; 
+    color: red; 
+}
+
