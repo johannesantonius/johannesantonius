@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<body> 
+ <body> 
      <div class="dropdown">
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
@@ -11,69 +11,89 @@
       <a href="kleurmodellen.html">Kleurmodellen</a>
       <a href="snake.html" class="active">snake</a>
     </div>
-  </div>
+ </div>
 
-</body>
-<head>
+ </body>
+   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
-<head>
-  <title>Snake Game</title>
-  <style>
-    /* CSS-stijlen voor het spelbord */
-    #game-board {
-      width: 300px;
-      height: 300px;
-      border: 1px solid #000;
-      position: relative;
-    }
 
-    /* CSS-stijlen voor de slang */
-    .snake {
-      width: 20px;
-      height: 20px;
-      background-color: green;
-      position: absolute;
-    }
-
-    /* CSS-stijlen voor het voedsel */
-    .food {
-      width: 20px;
-      height: 20px;
-      background-color: red;
-      position: absolute;
-    }
-  </style>
-</head>
-<body>
-  <h1>Snake Game</h1>
-  <div id="game-board"></div>
-
-  <script>
-    // JavaScript-code voor het Snake-spel
-    const gameBoard = document.getElementById('game-board');
-    const snake = document.createElement('div');
-    snake.classList.add('snake');
-    gameBoard.appendChild(snake);
-
-    const food = document.createElement('div');
-    food.classList.add('food');
-    gameBoard.appendChild(food);
-
-    let snakeX = 0;
-    let snakeY = 0;
-    let foodX = 0;
-    let foodY = 0;
-
-    function moveSnake() {
-      // Voeg hier de logica toe om de slang te bewegen
-    }
-
-    function updateGame() {
-      // Voeg hier de code toe om het spel bij te werken
-    }
-
-    setInterval(updateGame, 100); // Update het spel elke 100 milliseconden
-  </script>
-</body>
-</html>
+  <head>
+    <title>Snake Game</title>
+    <style>
+      /* CSS-stijlen voor het spelbord */
+      #game-board {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        position: relative;
+      }
+  
+      /* CSS-stijlen voor de slang */
+      .snake {
+        width: 20px;
+        height: 20px;
+        background-color: green;
+        position: absolute;
+      }
+  
+      /* CSS-stijlen voor het voedsel */
+      .food {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Snake Game</h1>
+    <div id="game-board"></div>
+  
+    <script>
+      const gameBoard = document.getElementById('game-board');
+      let snake = [{ x: 2, y: 2 }];
+      let food = { x: 5, y: 5 };
+      let direction = 'right';
+  
+      function draw() {
+        gameBoard.innerHTML = ''; // Wis het spelbord
+  
+        // Tekenen van voedsel
+        const foodElement = document.createElement('div');
+        foodElement.classList.add('food');
+        foodElement.style.left = food.x * 20 + 'px';
+        foodElement.style.top = food.y * 20 + 'px';
+        gameBoard.appendChild(foodElement);
+  
+        // Tekenen van de slang
+        snake.forEach(segment => {
+          const snakeSegment = document.createElement('div');
+          snakeSegment.classList.add('snake');
+          snakeSegment.style.left = segment.x * 20 + 'px';
+          snakeSegment.style.top = segment.y * 20 + 'px';
+          gameBoard.appendChild(snakeSegment);
+        });
+      }
+  
+      function update() {
+        // Beweeg de slang volgens de huidige richting
+  
+        // Voeg hier logica toe om de richting te controleren en de slang te bewegen
+  
+        // Controleer op botsingen met muren of jezelf
+  
+        // Controleer of de slang het voedsel heeft gegeten
+  
+        // Voeg hier eventueel andere logica toe
+  
+        // Teken het spel opnieuw
+        draw();
+      }
+  
+      // Start het spel loop
+      setInterval(update, 100);
+    </script>
+  </body>
+  </html>
+  
