@@ -6,6 +6,11 @@ h1 {
   font-size: 300%;
   text-align: center;
 }
+/* deze regels gaan over h2 en doen hetzelfde als h1 */
+h2{
+  font-family: verdana;
+  font-size: 150%;
+}
 
 /* Deze regels stijlen de <p>-elementen. Ze geven de tekst een zwarte kleur en centreren deze. */
 p {
