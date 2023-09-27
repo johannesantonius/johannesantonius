@@ -108,18 +108,18 @@
     // Start het spel wanneer op de knop wordt geklikt
     document.getElementById('start-button').addEventListener('click', startGame);
     
-    // Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'ArrowUp' && direction !== 'down') {
-        direction = 'up';
-      } else if (event.key === 'ArrowDown' && direction !== 'up') {
-        direction = 'down';
-      } else if (event.key === 'ArrowLeft' && direction !== 'right') {
-        direction = 'left';
-      } else if (event.key === 'ArrowRight' && direction !== 'left') {
-        direction = 'right';
-      }
-    });
+  if (event.key === 'ArrowUp' && direction !== 'down') {
+    direction = 'up';
+  } else if (event.key === 'ArrowDown' && direction !== 'up') {
+    direction = 'down';
+  } else if (event.key === 'ArrowLeft' && direction !== 'right') {
+    direction = 'left';
+  } else if (event.key === 'ArrowRight' && direction !== 'left') {
+    direction = 'right';
+  }
+});
+
   </script>
 </body>
 </html>
