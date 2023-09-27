@@ -12,17 +12,19 @@ p {
 
 body {
   background-color: powderblue;
+  margin: 0; /* Voeg dit toe om de standaardmarges te verwijderen */
 }
-
 
 .button-container {
   display: flex;
   gap: 10px;
+  justify-content: center; /* Centreer de knoppen horizontaal in de container */
+  margin-top: 20px; /* Voeg wat ruimte toe boven de knoppen */
 }
 
 .button-container button {
   background-color: #000000;
-  color: #000000;
+  color: #ffffff; /* Witte tekst voor contrast */
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -65,45 +67,49 @@ img {
 .menu:hover .menu-button {
   display: block;
 }
-/* styles.css */
-/* ... (andere stijlen hierboven) */
+
+/* Voeg onderstaande CSS-stijlen toe voor het dropdown-menu */
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  width: 100%; /* Volledige breedte van het scherm */
 }
 
-.dropbtn {
+.dropdown .dropbtn {
   background-color: #333;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Volledige breedte van de dropdown */
+  text-align: center; /* Centreer de tekst in de knop */
 }
 
-.dropdown-content {
+.dropdown .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 100%; /* Volledige breedte van de dropdown */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown .dropdown-content a {
   color: #333;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown .dropdown-content a:hover {
   background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 
 a.active {
     font-weight: bold; 
