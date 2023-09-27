@@ -15,7 +15,7 @@ h2{
 /* Deze regels stijlen de <p>-elementen. Ze geven de tekst een zwarte kleur en centreren deze. */
 p {
   color: rgb(0, 0, 0);
-  text-align: center;
+  text-align: left;
 }
 
 /* Deze regels stijlen de achtergrondkleur van de hele pagina naar poederblauw en verwijderen de standaard marges. */
