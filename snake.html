@@ -48,13 +48,16 @@
   </head>
   <body>
     <h1>Snake Game</h1>
-    <div id="game-board"></div>
+    <button id="start-button">Start Game</button>
+    <div id="game-board" style="display: none;"></div>
   
     <script>
       const gameBoard = document.getElementById('game-board');
       let snake = [{ x: 2, y: 2 }];
       let food = { x: 5, y: 5 };
       let direction = 'right';
+      let score = 0;
+      let gameLoop;
   
       function draw() {
         gameBoard.innerHTML = ''; // Wis het spelbord
@@ -91,8 +94,27 @@
         draw();
       }
   
-      // Start het spel loop
-      setInterval(update, 100);
+      function startGame() {
+        gameBoard.style.display = 'block';
+        document.getElementById('start-button').style.display = 'none';
+        gameLoop = setInterval(update, 100);
+      }
+  
+      // Start het spel wanneer op de knop wordt geklikt
+      document.getElementById('start-button').addEventListener('click', startGame);
+      
+      // Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowUp' && direction !== 'down') {
+          direction = 'up';
+        } else if (event.key === 'ArrowDown' && direction !== 'up') {
+          direction = 'down';
+        } else if (event.key === 'ArrowLeft' && direction !== 'right') {
+          direction = 'left';
+        } else if (event.key === 'ArrowRight' && direction !== 'left') {
+          direction = 'right';
+        }
+      });
     </script>
   </body>
   </html>
