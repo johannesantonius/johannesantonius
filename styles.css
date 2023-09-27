@@ -1,40 +1,26 @@
 /* styles.css */
+
+/* Deze regels stijlen de <h1>-elementen. Ze geven het een specifiek lettertype, grootte en centreren de tekst. */
 h1 {
   font-family: verdana;
   font-size: 300%;
   text-align: center;
 }
 
+/* Deze regels stijlen de <p>-elementen. Ze geven de tekst een zwarte kleur en centreren deze. */
 p {
   color: rgb(0, 0, 0);
   text-align: center;
 }
 
+/* Deze regels stijlen de achtergrondkleur van de hele pagina naar poederblauw en verwijderen de standaard marges. */
 body {
   background-color: powderblue;
   margin: 0; /* Voeg dit toe om de standaardmarges te verwijderen */
 }
 
-.button-container {
-  display: flex;
-  gap: 10px;
-  justify-content: center; /* Centreer de knoppen horizontaal in de container */
-  margin-top: 20px; /* Voeg wat ruimte toe boven de knoppen */
-}
 
-.button-container button {
-  background-color: #000000;
-  color: #ffffff; /* Witte tekst voor contrast */
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button-container button:hover {
-  background-color: #000;
-}
-
+/* Deze regels stijlen de footer onderaan de pagina zoals kleur grootte en de plaats van de tekst */
 footer {
   position: absolute;
   bottom: 0;
@@ -45,11 +31,13 @@ footer {
   color: white;
 }
 
+/* dit bepaald de grootte van de afbeelding */
 img {
   width: 100px;
   height: 100px;
 }
 
+/* Deze regels stijlen een menu en de bijbehorende knop. */
 .menu {
   position: relative;
 }
@@ -64,15 +52,17 @@ img {
   border: 1px solid #e41616;
 }
 
+/* Deze regel laat de menuknop zien wanneer je met de muis over de knop gaat. */
 .menu:hover .menu-button {
   display: block;
 }
 
-/* Voeg onderstaande CSS-stijlen toe voor het dropdown-menu */
 
+
+/* Deze regels stijlen de dropdown-container en knop. */
 .dropdown {
   position: relative;
-  width: 100%; /* Volledige breedte van het scherm */
+  width: 100%; /* zorgt ervoor dat het menu een balk over de hele breedte wordt wanneer je er met je muis over heen gaat */
 }
 
 .dropdown .dropbtn {
@@ -82,10 +72,11 @@ img {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 100%; /* Volledige breedte van de dropdown */
-  text-align: center; /* Centreer de tekst in de knop */
+  width: 100%; /* bepaald de breedte van de dropdown */
+  text-align: center; /* zet de tekst van de knop in het midden */
 }
 
+/* Deze regels stijlen de inhoud van de dropdown, waardoor deze verborgen is totdat je over de knop zweeft. */
 .dropdown .dropdown-content {
   display: none;
   position: absolute;
@@ -95,6 +86,7 @@ img {
   z-index: 1;
 }
 
+/* Deze regels stijlen de links binnen de dropdown. */
 .dropdown .dropdown-content a {
   color: #333;
   padding: 12px 16px;
@@ -102,17 +94,18 @@ img {
   display: block;
 }
 
+/* Deze regel verandert de achtergrondkleur van de dropdown-links wanneer je er met de muis overheen gaat. */
 .dropdown .dropdown-content a:hover {
   background-color: #ddd;
 }
 
+/* Deze regel laat de dropdown-inhoud zien wanneer je over de dropdown zweeft. */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-
+/* Deze regel stijlt actieve links met een vetgedrukte rode tekstkleur. */
 a.active {
-    font-weight: bold; 
-    color: red; 
+  font-weight: bold;
+  color: red;
 }
-
