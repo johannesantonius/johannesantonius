@@ -27,7 +27,7 @@ body {
 
 /* Deze regels stijlen de footer onderaan de pagina zoals kleur grootte en de plaats van de tekst */
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: red;
