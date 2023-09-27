@@ -88,7 +88,7 @@ img {
 
 /* Deze regels stijlen de links binnen de dropdown. */
 .dropdown .dropdown-content a {
-  color: #333;
+  color: #000000;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
