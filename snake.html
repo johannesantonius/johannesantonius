@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake Game</title>
+  <style>
+    /* CSS-stijlen voor het spelbord */
+    #game-board {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000;
+      position: relative;
+    }
+
+    /* CSS-stijlen voor de slang */
+    .snake {
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      position: absolute;
+    }
+
+    /* CSS-stijlen voor het voedsel */
+    .food {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Snake Game</h1>
+  <div id="game-board"></div>
+
+  <script>
+    // JavaScript-code voor het Snake-spel
+    const gameBoard = document.getElementById('game-board');
+    const snake = document.createElement('div');
+    snake.classList.add('snake');
+    gameBoard.appendChild(snake);
+
+    const food = document.createElement('div');
+    food.classList.add('food');
+    gameBoard.appendChild(food);
+
+    let snakeX = 0;
+    let snakeY = 0;
+    let foodX = 0;
+    let foodY = 0;
+
+    function moveSnake() {
+      // Voeg hier de logica toe om de slang te bewegen
+    }
+
+    function updateGame() {
+      // Voeg hier de code toe om het spel bij te werken
+    }
+
+    setInterval(updateGame, 100); // Update het spel elke 100 milliseconden
+  </script>
+</body>
+</html>
