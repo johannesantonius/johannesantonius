@@ -2,6 +2,36 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    #game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    #game-board {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000;
+      margin: 20px;
+      display: block;
+    }
+    .control-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .control-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  </style>
 </head>
 <body>
   <div class="dropdown">
@@ -17,46 +47,56 @@
     </div>
   </div>
 
-  <h1>Snake Game</h1>
-  <p id="start-instruction" style="text-align: center;">Druk op de pijl naar beneden om te starten</p>
-  <div id="game-board" style="display: none;"></div>
-  <p id="score" style="text-align: center;">Score: 0</p>
+  <div id="game-container">
+    <h1>Snake Game</h1>
+    <p id="start-instruction">Druk op de pijl naar beneden om te starten</p>
+    <div id="game-board" style="display: none;"></div>
+    <p id="score" style="text-align: center;">Score: 0</p>
+    <div class="control-buttons">
+      <button class="control-button" id="up-button">Omhoog</button>
+      <button class="control-button" id="down-button">Omlaag</button>
+      <button class="control-button" id="left-button">Links</button>
+      <button class="control-button" id="right-button">Rechts</button>
+    </div>
+  </div>
 
   <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;">
     <div>
-      <p>Dirk Straathof:versie 1</p>
+      <p>Dirk Straathof: versie 1</p>
     </div>
   </footer>
 
   <script>
-    let gameStarted = false; // Nieuwe variabele toegevoegd om bij te houden of het spel is gestart
+    let gameStarted = false;
+    let direction = 'right'; // Standaardrichting
 
     document.addEventListener('keydown', function(event) {
       if (event.key === 'ArrowDown' && !gameStarted) {
-        // Start het spel alleen als het nog niet is gestart
         startGame();
       }
     });
 
     document.addEventListener('DOMContentLoaded', function() {
+      const gameContainer = document.getElementById('game-container');
       const gameBoard = document.getElementById('game-board');
+      const upButton = document.getElementById('up-button');
+      const downButton = document.getElementById('down-button');
+      const leftButton = document.getElementById('left-button');
+      const rightButton = document.getElementById('right-button');
+      
       let snake = [{ x: 2, y: 2 }];
       let food = { x: 5, y: 5 };
-      let direction = 'right';
       let score = 0;
       let gameLoop;
 
       function draw() {
-        gameBoard.innerHTML = ''; // Wis het spelbord
-
-        // Tekenen van voedsel
+        gameBoard.innerHTML = '';
         const foodElement = document.createElement('div');
         foodElement.classList.add('food');
         foodElement.style.left = food.x * 20 + 'px';
         foodElement.style.top = food.y * 20 + 'px';
         gameBoard.appendChild(foodElement);
 
-        // Tekenen van de slang
         snake.forEach(segment => {
           const snakeSegment = document.createElement('div');
           snakeSegment.classList.add('snake');
@@ -67,7 +107,6 @@
       }
 
       function update() {
-        // Beweeg de slang volgens de huidige richting
         let newHead = { ...snake[0] };
 
         switch (direction) {
@@ -85,41 +124,35 @@
             break;
         }
 
-        // Voeg het nieuwe hoofd toe aan de slang
         snake.unshift(newHead);
 
-        // Controleer op botsingen met muren of jezelf
         if (
           newHead.x < 0 ||
-          newHead.x >= 15 || // Pas dit aan op basis van de grootte van je spelbord
+          newHead.x >= 15 ||
           newHead.y < 0 ||
-          newHead.y >= 15 || // Pas dit aan op basis van de grootte van je spelbord
+          newHead.y >= 15 ||
           snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
         ) {
-          // Als de slang tegen een muur botst of zichzelf bijt, is het spel voorbij
           clearInterval(gameLoop);
           alert('Game Over!');
-          location.reload(); // Herlaad de pagina om het spel opnieuw te starten
+          location.reload();
           return;
         }
 
-        // Controleer of de slang het voedsel heeft gegeten
         if (newHead.x === food.x && newHead.y === food.y) {
-          // Voedsel is gegeten, verhoog de score en genereer nieuw voedsel
           score++;
           document.getElementById('score').innerText = `Score: ${score}`;
           generateFood();
         } else {
-          // Als het voedsel niet is gegeten, verwijder het laatste segment van de slang
           snake.pop();
         }
 
-        // Teken het spel opnieuw
         draw();
       }
 
       function startGame() {
-        gameStarted = true; // Markeer het spel als gestart
+        gameStarted = true;
+        gameContainer.style.flexDirection = 'row'; // Zet de richting van de game-container op rij
         gameBoard.style.display = 'block';
         document.getElementById('start-instruction').style.display = 'none';
         document.getElementById('score').style.display = 'block';
@@ -139,11 +172,35 @@
         }
       });
 
+      // Luister naar de knoppen voor de richtingen
+      upButton.addEventListener('click', function() {
+        if (direction !== 'down') {
+          direction = 'up';
+        }
+      });
+
+      downButton.addEventListener('click', function() {
+        if (direction !== 'up') {
+          direction = 'down';
+        }
+      });
+
+      leftButton.addEventListener('click', function() {
+        if (direction !== 'right') {
+          direction = 'left';
+        }
+      });
+
+      rightButton.addEventListener('click', function() {
+        if (direction !== 'left') {
+          direction = 'right';
+        }
+      });
+
       function generateFood() {
-        // Genereer willekeurige coördinaten voor voedsel
         food = {
-          x: Math.floor(Math.random() * 15), // Pas dit aan op basis van de grootte van je spelbord
-          y: Math.floor(Math.random() * 15) // Pas dit aan op basis van de grootte van je spelbord
+          x: Math.floor(Math.random() * 15),
+          y: Math.floor(Math.random() * 15)
         };
       }
     });
