@@ -20,96 +20,93 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<head>
-  <title>Snake Game</title>
-  <style>
-    /* CSS-stijlen voor het spelbord */
-    #game-board {
-      width: 300px;
-      height: 300px;
-      border: 1px solid #000;
-      position: relative;
-      /* Voeg in-line CSS toe om het spelbord in het midden te plaatsen */
-      margin: 0 auto;
-      display: block;
-    }
+<style>
 
-    /* CSS-stijlen voor de slang */
-    .snake {
-      width: 20px;
-      height: 20px;
-      background-color: green;
-      position: absolute;
-    }
+#game-board {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+  position: relative;
+  margin: 0 auto; /* Plaats het spelbord in het midden van het scherm */
+  display: block;
+}
 
-    /* CSS-stijlen voor het voedsel */
-    .food {
-      width: 20px;
-      height: 20px;
-      background-color: red;
-      position: absolute;
-    }
-  </style>
+/* CSS-stijlen voor de slang */
+.snake {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  position: absolute;
+}
+
+/* CSS-stijlen voor het voedsel */
+.food {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+}
+</style>
 </head>
-
 <body>
-  <h1>Snake Game</h1>
-  <button id="start-button" style="padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Game</button>
-  <div id="game-board" style="display: none;"></div>
+<h1>Snake Game</h1>
+<button id="start-button">Start Game</button>
+<div id="game-board" style="display: none;"></div>
 
-  <script>
-    const gameBoard = document.getElementById('game-board');
-    let snake = [{ x: 2, y: 2 }];
-    let food = { x: 5, y: 5 };
-    let direction = 'right';
-    let score = 0;
-    let gameLoop;
+<script>
+const gameBoard = document.getElementById('game-board');
+let snake = [{ x: 2, y: 2 }];
+let food = { x: 5, y: 5 };
+let direction = 'right';
+let score = 0;
+let gameLoop;
 
-    function draw() {
-      gameBoard.innerHTML = ''; // Wis het spelbord
+function draw() {
+  gameBoard.innerHTML = ''; // Wis het spelbord
 
-      // Tekenen van voedsel
-      const foodElement = document.createElement('div');
-      foodElement.classList.add('food');
-      foodElement.style.left = food.x * 20 + 'px';
-      foodElement.style.top = food.y * 20 + 'px';
-      gameBoard.appendChild(foodElement);
+  // Tekenen van voedsel
+  const foodElement = document.createElement('div');
+  foodElement.classList.add('food');
+  foodElement.style.left = food.x * 20 + 'px';
+  foodElement.style.top = food.y * 20 + 'px';
+  gameBoard.appendChild(foodElement);
 
-      // Tekenen van de slang
-      snake.forEach(segment => {
-        const snakeSegment = document.createElement('div');
-        snakeSegment.classList.add('snake');
-        snakeSegment.style.left = segment.x * 20 + 'px';
-        snakeSegment.style.top = segment.y * 20 + 'px';
-        gameBoard.appendChild(snakeSegment);
-      });
-    }
+  // Tekenen van de slang
+  snake.forEach(segment => {
+    const snakeSegment = document.createElement('div');
+    snakeSegment.classList.add('snake');
+    snakeSegment.style.left = segment.x * 20 + 'px';
+    snakeSegment.style.top = segment.y * 20 + 'px';
+    gameBoard.appendChild(snakeSegment);
+  });
+}
 
-    function update() {
-      // Beweeg de slang volgens de huidige richting
+function update() {
+  // Beweeg de slang volgens de huidige richting
 
-      // Voeg hier logica toe om de richting te controleren en de slang te bewegen
+  // Voeg hier logica toe om de richting te controleren en de slang te bewegen
 
-      // Controleer op botsingen met muren of jezelf
+  // Controleer op botsingen met muren of jezelf
 
-      // Controleer of de slang het voedsel heeft gegeten
+  // Controleer of de slang het voedsel heeft gegeten
 
-      // Voeg hier eventueel andere logica toe
+  // Voeg hier eventueel andere logica toe
 
-      // Teken het spel opnieuw
-      draw();
-    }
+  // Teken het spel opnieuw
+  draw();
+}
 
-    function startGame() {
-      gameBoard.style.display = 'block';
-      document.getElementById('start-button').style.display = 'none';
-      gameLoop = setInterval(update, 100);
-    }
+function startGame() {
+  gameBoard.style.display = 'block';
+  document.getElementById('start-button').style.display = 'none';
+  gameLoop = setInterval(update, 100);
+}
 
-    // Start het spel wanneer op de knop wordt geklikt
-    document.getElementById('start-button').addEventListener('click', startGame);
-    
-    document.addEventListener('keydown', function(event) {
+// Start het spel wanneer op de knop wordt geklikt
+document.getElementById('start-button').addEventListener('click', startGame);
+
+// Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
+document.addEventListener('keydown', function(event) {
   if (event.key === 'ArrowUp' && direction !== 'down') {
     direction = 'up';
   } else if (event.key === 'ArrowDown' && direction !== 'up') {
@@ -120,8 +117,7 @@
     direction = 'right';
   }
 });
-
-  </script>
+</script>
 
  
 <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;">
