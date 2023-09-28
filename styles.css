@@ -115,3 +115,14 @@ a.active {
   color: red;
 }
 
+/*deze regels stijlen de video op de homepage*/
+.video-size {
+  width: 80%; 
+  margin: 0 auto;
+  display: block;
+}
+
+/* deze regels stijlen de herstartknop */
+#restart-button {
+  display: none; /* Verberg de knop standaard */
+}

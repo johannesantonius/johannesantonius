@@ -29,20 +29,37 @@
    <video id="homepagevideo">
     <source src="fotos/videogithubhomepage.mp4" type="video/mp4">
    </video>
-
-  <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;"><!--deze code is voor de footer die onderaan van de pagina staat en is gestyled in het css bestand-->
+   <button id="restart-button" style="display: none; margin: 10px auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Opnieuw starten</button>
+  
+   <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;"><!--deze code is voor de footer die onderaan van de pagina staat en is gestyled in het css bestand-->
     <div>
       <p>Dirk Straathof:versie 1</p>
     </div>
   </footer>
 
   <script>
-   <!--javascript code om de video op de homepage te starten en daarna de knop zichzelf te verbergen-->
-    document.getElementById('start-button').addEventListener('click', function() {
-      const video = document.getElementById('homepagevideo');
-      video.play();
-    
-      this.style.display = 'none';
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('my-video');
+      const startButton = document.getElementById('start-button');
+      const restartButton = document.getElementById('restart-button');
+
+     <!--deze regels zorgen ervoor dat als je op de startknop drukt dat dan de video start-->>
+      startButton.addEventListener('click', function() {
+        video.play();
+        startButton.style.display = 'none'; 
+      });
+
+   
+      video.addEventListener('ended', function() {
+        restartButton.style.display = 'block'; 
+      });
+
+      <!--deze regels zorgen ervoor dat de herstartknop werkt-->>
+      restartButton.addEventListener('click', function() {
+        video.currentTime = 0; 
+        video.play();
+        restartButton.style.display = 'none'; 
+      });
     });
   </script>
 
