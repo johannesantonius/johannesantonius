@@ -29,6 +29,13 @@
   </footer>
 
   <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowDown' && typeof gameLoop === 'undefined') {
+        // Start het spel alleen als de gameLoop-variabele nog niet is gedefinieerd
+        startGame();
+      }
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
       const gameBoard = document.getElementById('game-board');
       let snake = [{ x: 2, y: 2 }];
