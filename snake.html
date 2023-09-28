@@ -18,7 +18,7 @@
   </div>
 
   <h1>Snake Game</h1>
-  <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Game</button>
+  <p id="start-instruction" style="text-align: center;">Druk op de pijl naar beneden om te starten</p>
   <div id="game-board" style="display: none;"></div>
   <p id="score" style="text-align: center;">Score: 0</p>
 
@@ -36,18 +36,6 @@
       let direction = 'right';
       let score = 0;
       let gameLoop;
-
-      // Functie om de knoppen te activeren
-      function enableButtons() {
-        const startButton = document.getElementById('start-button');
-        startButton.addEventListener('click', startGame);
-      }
-
-      // Functie om de knoppen uit te schakelen
-      function disableButtons() {
-        const startButton = document.getElementById('start-button');
-        startButton.removeEventListener('click', startGame);
-      }
 
       function draw() {
         gameBoard.innerHTML = ''; // Wis het spelbord
@@ -103,7 +91,6 @@
           clearInterval(gameLoop);
           alert('Game Over!');
           location.reload(); // Herlaad de pagina om het spel opnieuw te starten
-          enableButtons(); // Schakel de knoppen opnieuw in
           return;
         }
 
@@ -123,9 +110,8 @@
       }
 
       function startGame() {
-        disableButtons(); // Schakel de knoppen uit zodat het spel niet meerdere keren kan worden gestart
+        document.getElementById('start-instruction').style.display = 'none'; // Verberg de instructie
         gameBoard.style.display = 'block';
-        document.getElementById('start-button').style.display = 'none';
         gameLoop = setInterval(update, 100);
       }
 
@@ -149,9 +135,6 @@
           y: Math.floor(Math.random() * 15) // Pas dit aan op basis van de grootte van je spelbord
         };
       }
-
-      // Schakel de knoppen in bij het laden van de pagina
-      enableButtons();
     });
   </script>
 </body>
