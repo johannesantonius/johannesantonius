@@ -7,12 +7,12 @@
   <div class="dropdown">
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
-        <a href="index.html"class="active">Homepage</a>
+        <a href="index.html" class="active">Homepage</a>
         <a href="page2.html">Computerwerking</a>
         <a href="binairestelsel.html">Binairestelsel</a> 
         <a href="kleurmodellen.html">Kleurmodellen</a>
         <a href="compressie.html">compressie</a>
-        <a href="opslagbeeldengeluid.html">beeldengeluid </a>
+        <a href="opslagbeeldengeluid.html">beeldengeluid</a>
         <a href="snake.html">snake</a>
     </div>
   </div>
@@ -21,11 +21,13 @@
   <h2 style="text-align:center;">over mij</h2>
   <p style="text-align:center;">Hoi ik ben Dirk Straathof, ik ben 15 jaar oud en mijn hobby is sleutelen. Als sport zit ik op schaatsen en ik geef ook training.</p>
   
-  <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Video</button>
-  <video id="homepagevideo">
-    <source src="fotos/videogithubhomepage.mp4" type="video/mp4">
-  </video>
-  <button id="restart-button" style="display: none; margin: 10px auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Opnieuw starten</button>
+  <div style="text-align: center;"> <!-- Center de knoppen en video -->
+    <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Video</button>
+    <button id="restart-button" style="display: none; margin: 10px auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Opnieuw starten</button>
+    <video id="homepagevideo" style="width: 50%; height: auto;"> <!-- Verklein de video naar 50% van de oorspronkelijke grootte -->
+      <source src="fotos/videogithubhomepage.mp4" type="video/mp4">
+    </video>
+  </div>
   
   <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;">
     <div>
