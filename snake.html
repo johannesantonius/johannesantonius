@@ -123,4 +123,36 @@
       }
 
       function startGame() {
-        disableButtons(); // Schakel de knoppen uit zodat het spel niet meerdere k
+        disableButtons(); // Schakel de knoppen uit zodat het spel niet meerdere keren kan worden gestart
+        gameBoard.style.display = 'block';
+        document.getElementById('start-button').style.display = 'none';
+        gameLoop = setInterval(update, 100);
+      }
+
+      // Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowUp' && direction !== 'down') {
+          direction = 'up';
+        } else if (event.key === 'ArrowDown' && direction !== 'up') {
+          direction = 'down';
+        } else if (event.key === 'ArrowLeft' && direction !== 'right') {
+          direction = 'left';
+        } else if (event.key === 'ArrowRight' && direction !== 'left') {
+          direction = 'right';
+        }
+      });
+
+      function generateFood() {
+        // Genereer willekeurige coördinaten voor voedsel
+        food = {
+          x: Math.floor(Math.random() * 15), // Pas dit aan op basis van de grootte van je spelbord
+          y: Math.floor(Math.random() * 15) // Pas dit aan op basis van de grootte van je spelbord
+        };
+      }
+
+      // Schakel de knoppen in bij het laden van de pagina
+      enableButtons();
+    });
+  </script>
+</body>
+</html>
