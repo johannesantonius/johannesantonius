@@ -1,185 +1,144 @@
 <!DOCTYPE html>
 <html>
-
-<body> 
-  <div class="dropdown">
-    <button class="dropbtn">Menu</button>
-    <div class="dropdown-content">
-        <a href="index.html">Homepage</a>
-        <a href="page2.html">Computerwerking</a>
-        <a href="binairestelsel.html">Binairestelsel</a> 
-        <a href="kleurmodellen.html">Kleurmodellen</a>
-        <a href="compressie.html">compressie</a>
-        <a href="opslagbeeldengeluid.html">beeldengeluid </a>
-        <a href="snake.html"class="active">snake</a>
-    </div>
-</div>
-</body>
-
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-
-<style>
-
-#game-board {
-  width: 300px;
-  height: 300px;
-  border: 1px solid #000;
-  position: relative;
-  margin: 0 auto; /* Plaats het spelbord in het midden van het scherm */
-  display: block;
-}
-
-/* CSS-stijlen voor de slang */
-.snake {
-  width: 20px;
-  height: 20px;
-  background-color: green;
-  position: absolute;
-}
-
-/* CSS-stijlen voor het voedsel */
-.food {
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  position: absolute;
-}
-</style>
-</head>
 <body>
-<h1>Snake Game</h1>
-<button id="start-button">Start Game</button>
-<div id="game-board" style="display: none;"></div>
-
-<script>
-const gameBoard = document.getElementById('game-board');
-let snake = [{ x: 2, y: 2 }];
-let food = { x: 5, y: 5 };
-let direction = 'right';
-let score = 0;
-let gameLoop;
-
-function draw() {
-  gameBoard.innerHTML = ''; // Wis het spelbord
-
-  // Tekenen van voedsel
-  const foodElement = document.createElement('div');
-  foodElement.classList.add('food');
-  foodElement.style.left = food.x * 20 + 'px';
-  foodElement.style.top = food.y * 20 + 'px';
-  gameBoard.appendChild(foodElement);
-
-  // Tekenen van de slang
-  snake.forEach(segment => {
-    const snakeSegment = document.createElement('div');
-    snakeSegment.classList.add('snake');
-    snakeSegment.style.left = segment.x * 20 + 'px';
-    snakeSegment.style.top = segment.y * 20 + 'px';
-    gameBoard.appendChild(snakeSegment);
-  });
-}
-
-
-
-function update() {
-  // Beweeg de slang volgens de huidige richting
-  let newHead = { ...snake[0] };
-
-  switch (direction) {
-    case 'up':
-      newHead.y--;
-      break;
-    case 'down':
-      newHead.y++;
-      break;
-    case 'left':
-      newHead.x--;
-      break;
-    case 'right':
-      newHead.x++;
-      break;
-  }
-
-  // Voeg het nieuwe hoofd toe aan de slang
-  snake.unshift(newHead);
-
-  // Controleer op botsingen met muren of jezelf
-  if (
-    newHead.x < 0 ||
-    newHead.x >= 15 || // Pas dit aan op basis van de grootte van je spelbord
-    newHead.y < 0 ||
-    newHead.y >= 15 || // Pas dit aan op basis van de grootte van je spelbord
-    snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
-  ) {
-    // Als de slang tegen een muur botst of zichzelf bijt, is het spel voorbij
-    clearInterval(gameLoop);
-    alert('Game Over!');
-    location.reload(); // Herlaad de pagina om het spel opnieuw te starten
-    return;
-  }
-
-  // Controleer of de slang het voedsel heeft gegeten
-  if (newHead.x === food.x && newHead.y === food.y) {
-    // Voedsel is gegeten, verhoog de score en genereer nieuw voedsel
-    score++;
-    document.getElementById('score').innerText = `Score: ${score}`;
-    generateFood();
-  } else {
-    // Als het voedsel niet is gegeten, verwijder het laatste segment van de slang
-    snake.pop();
-  }
-
-  // Teken het spel opnieuw
-  draw();
-}
-
-function generateFood() {
-  // Genereer willekeurige coördinaten voor voedsel
-  food = {
-    x: Math.floor(Math.random() * 15), // Pas dit aan op basis van de grootte van je spelbord
-    y: Math.floor(Math.random() * 15) // Pas dit aan op basis van de grootte van je spelbord
-  };
-}
-
-// ...
-
-  draw();
-}
-
-function startGame() {
-  gameBoard.style.display = 'block';
-  document.getElementById('start-button').style.display = 'none';
-  gameLoop = setInterval(update, 100);
-}
-
-// Start het spel wanneer op de knop wordt geklikt
-document.getElementById('start-button').addEventListener('click', startGame);
-
-// Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'ArrowUp' && direction !== 'down') {
-    direction = 'up';
-  } else if (event.key === 'ArrowDown' && direction !== 'up') {
-    direction = 'down';
-  } else if (event.key === 'ArrowLeft' && direction !== 'right') {
-    direction = 'left';
-  } else if (event.key === 'ArrowRight' && direction !== 'left') {
-    direction = 'right';
-  }
-});
-</script>
-
- 
-<footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;">
-  <div>
-    <p>Dirk Straathof:versie 1</p>
+  <div class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+      <a href="index.html">Homepage</a>
+      <a href="page2.html">Computerwerking</a>
+      <a href="binairestelsel.html">Binairestelsel</a>
+      <a href="kleurmodellen.html">Kleurmodellen</a>
+      <a href="compressie.html">compressie</a>
+      <a href="opslagbeeldengeluid.html">beeldengeluid</a>
+      <a href="snake.html" class="active">snake</a>
+    </div>
   </div>
-</footer>
-</body>
-</html>
 
+  <h1>Snake Game</h1>
+  <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Game</button>
+  <div id="game-board" style="display: none;"></div>
+  <p id="score" style="text-align: center;">Score: 0</p>
 
+  <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;">
+    <div>
+      <p>Dirk Straathof:versie 1</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const gameBoard = document.getElementById('game-board');
+      let snake = [{ x: 2, y: 2 }];
+      let food = { x: 5, y: 5 };
+      let direction = 'right';
+      let score = 0;
+      let gameLoop;
+
+      function draw() {
+        gameBoard.innerHTML = ''; // Wis het spelbord
+
+        // Tekenen van voedsel
+        const foodElement = document.createElement('div');
+        foodElement.classList.add('food');
+        foodElement.style.left = food.x * 20 + 'px';
+        foodElement.style.top = food.y * 20 + 'px';
+        gameBoard.appendChild(foodElement);
+
+        // Tekenen van de slang
+        snake.forEach(segment => {
+          const snakeSegment = document.createElement('div');
+          snakeSegment.classList.add('snake');
+          snakeSegment.style.left = segment.x * 20 + 'px';
+          snakeSegment.style.top = segment.y * 20 + 'px';
+          gameBoard.appendChild(snakeSegment);
+        });
+      }
+
+      function update() {
+        // Beweeg de slang volgens de huidige richting
+        let newHead = { ...snake[0] };
+
+        switch (direction) {
+          case 'up':
+            newHead.y--;
+            break;
+          case 'down':
+            newHead.y++;
+            break;
+          case 'left':
+            newHead.x--;
+            break;
+          case 'right':
+            newHead.x++;
+            break;
+        }
+
+        // Voeg het nieuwe hoofd toe aan de slang
+        snake.unshift(newHead);
+
+        // Controleer op botsingen met muren of jezelf
+        if (
+          newHead.x < 0 ||
+          newHead.x >= 15 || // Pas dit aan op basis van de grootte van je spelbord
+          newHead.y < 0 ||
+          newHead.y >= 15 || // Pas dit aan op basis van de grootte van je spelbord
+          snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
+        ) {
+          // Als de slang tegen een muur botst of zichzelf bijt, is het spel voorbij
+          clearInterval(gameLoop);
+          alert('Game Over!');
+          location.reload(); // Herlaad de pagina om het spel opnieuw te starten
+          return;
+        }
+
+        // Controleer of de slang het voedsel heeft gegeten
+        if (newHead.x === food.x && newHead.y === food.y) {
+          // Voedsel is gegeten, verhoog de score en genereer nieuw voedsel
+          score++;
+          document.getElementById('score').innerText = `Score: ${score}`;
+          generateFood();
+        } else {
+          // Als het voedsel niet is gegeten, verwijder het laatste segment van de slang
+          snake.pop();
+        }
+
+        // Teken het spel opnieuw
+        draw();
+      }
+
+      function startGame() {
+        gameBoard.style.display = 'block';
+        document.getElementById('start-button').style.display = 'none';
+        gameLoop = setInterval(update, 100);
+      }
+
+      // Start het spel wanneer op de knop wordt geklikt
+      document.getElementById('start-button').addEventListener('click', startGame);
+
+      // Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowUp' && direction !== 'down') {
+          direction = 'up';
+        } else if (event.key === 'ArrowDown' && direction !== 'up') {
+          direction = 'down';
+        } else if (event.key === 'ArrowLeft' && direction !== 'right') {
+          direction = 'left';
+        } else if (event.key === 'ArrowRight' && direction !== 'left') {
+          direction = 'right';
+        }
+      });
+
+      function generateFood() {
+        // Genereer willekeurige coördinaten voor voedsel
+        food = {
+          x: Math.floor(Math.random() * 15), // Pas dit aan op basis van de grootte van je spelbord
+          y: Math.floor(Math.random() * 15) // Pas dit aan op basis van de grootte van je spelbord
+        };
+      }
+    });
+  </script>
 </body>
 </html>
