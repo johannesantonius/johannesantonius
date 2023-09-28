@@ -55,9 +55,9 @@
   <div id="game-container">
     <h1>Snake Game</h1>
     <p id="start-instruction">Druk op de pijl naar beneden om te starten</p>
-    <div id="game-board" style="display: none;"></div>
-    <p id="score" style="text-align: center;">Score: 0</p>
-    <div class="control-buttons-vertical">
+    <div id="game-board" style="visibility: hidden;"></div>
+    <p id="score" style="text-align: center; visibility: hidden;">Score: 0</p>
+    <div class="control-buttons-vertical" style="visibility: hidden;">
       <button class="control-button" id="up-button">Omhoog</button>
       <div class="control-buttons">
         <button class="control-button" id="left-button">Links</button>
@@ -160,9 +160,10 @@
       function startGame() {
         gameStarted = true;
         gameContainer.style.flexDirection = 'row';
-        gameBoard.style.display = 'block';
-        document.getElementById('start-instruction').style.display = 'none';
-        document.getElementById('score').style.display = 'block';
+        gameBoard.style.visibility = 'visible';
+        document.getElementById('start-instruction').style.visibility = 'hidden';
+        document.getElementById('score').style.visibility = 'visible';
+        document.querySelector('.control-buttons-vertical').style.visibility = 'visible';
         gameLoop = setInterval(update, 100);
       }
 
