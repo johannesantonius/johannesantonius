@@ -117,7 +117,7 @@ a.active {
 
 /*deze regels stijlen de video op de homepage*/
 .video-size {
-  width: 80%; 
+  width: 60%; 
   margin: 0 auto;
   display: block;
 }
