@@ -29,9 +29,11 @@
   </footer>
 
   <script>
+    let gameStarted = false; // Nieuwe variabele toegevoegd om bij te houden of het spel is gestart
+
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'ArrowDown' && typeof gameLoop === 'undefined') {
-        // Start het spel alleen als de gameLoop-variabele nog niet is gedefinieerd
+      if (event.key === 'ArrowDown' && !gameStarted) {
+        // Start het spel alleen als het nog niet is gestart
         startGame();
       }
     });
@@ -117,6 +119,7 @@
       }
 
       function startGame() {
+        gameStarted = true; // Markeer het spel als gestart
         gameBoard.style.display = 'block';
         document.getElementById('start-instruction').style.display = 'none';
         document.getElementById('score').style.display = 'block';
