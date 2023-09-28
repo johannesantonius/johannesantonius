@@ -117,8 +117,9 @@
       }
 
       function startGame() {
-        document.getElementById('start-instruction').style.display = 'none'; // Verberg de instructie
         gameBoard.style.display = 'block';
+        document.getElementById('start-instruction').style.display = 'none';
+        document.getElementById('score').style.display = 'block';
         gameLoop = setInterval(update, 100);
       }
 
