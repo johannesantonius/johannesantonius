@@ -81,18 +81,70 @@ function draw() {
   });
 }
 
+
+
 function update() {
   // Beweeg de slang volgens de huidige richting
+  let newHead = { ...snake[0] };
 
-  // Voeg hier logica toe om de richting te controleren en de slang te bewegen
+  switch (direction) {
+    case 'up':
+      newHead.y--;
+      break;
+    case 'down':
+      newHead.y++;
+      break;
+    case 'left':
+      newHead.x--;
+      break;
+    case 'right':
+      newHead.x++;
+      break;
+  }
+
+  // Voeg het nieuwe hoofd toe aan de slang
+  snake.unshift(newHead);
 
   // Controleer op botsingen met muren of jezelf
+  if (
+    newHead.x < 0 ||
+    newHead.x >= 15 || // Pas dit aan op basis van de grootte van je spelbord
+    newHead.y < 0 ||
+    newHead.y >= 15 || // Pas dit aan op basis van de grootte van je spelbord
+    snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
+  ) {
+    // Als de slang tegen een muur botst of zichzelf bijt, is het spel voorbij
+    clearInterval(gameLoop);
+    alert('Game Over!');
+    location.reload(); // Herlaad de pagina om het spel opnieuw te starten
+    return;
+  }
 
   // Controleer of de slang het voedsel heeft gegeten
-
-  // Voeg hier eventueel andere logica toe
+  if (newHead.x === food.x && newHead.y === food.y) {
+    // Voedsel is gegeten, verhoog de score en genereer nieuw voedsel
+    score++;
+    document.getElementById('score').innerText = `Score: ${score}`;
+    generateFood();
+  } else {
+    // Als het voedsel niet is gegeten, verwijder het laatste segment van de slang
+    snake.pop();
+  }
 
   // Teken het spel opnieuw
+  draw();
+}
+
+function generateFood() {
+  // Genereer willekeurige coördinaten voor voedsel
+  food = {
+    x: Math.floor(Math.random() * 15), // Pas dit aan op basis van de grootte van je spelbord
+    y: Math.floor(Math.random() * 15) // Pas dit aan op basis van de grootte van je spelbord
+  };
+}
+
+// ...
+
   draw();
 }
 
