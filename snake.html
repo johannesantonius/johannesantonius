@@ -18,7 +18,7 @@
   </div>
 
   <h1>Snake Game</h1>
-  <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Game</button>
+  <p style="text-align: center;">Druk op de pijl naar beneden om te starten</p>
   <div id="game-board" style="display: none;"></div>
   <p id="score" style="text-align: center;">Score: 0</p>
 
@@ -29,6 +29,13 @@
   </footer>
 
   <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowDown' && typeof gameLoop === 'undefined') {
+        // Start het spel alleen als de gameLoop-variabele nog niet is gedefinieerd
+        startGame();
+      }
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
       const gameBoard = document.getElementById('game-board');
       let snake = [{ x: 2, y: 2 }];
@@ -114,9 +121,6 @@
         document.getElementById('start-button').style.display = 'none';
         gameLoop = setInterval(update, 100);
       }
-
-      // Start het spel wanneer op de knop wordt geklikt
-      document.getElementById('start-button').addEventListener('click', startGame);
 
       // Luister naar toetsenbordgebeurtenissen om de richting te wijzigen
       document.addEventListener('keydown', function(event) {
