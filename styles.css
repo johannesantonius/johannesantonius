@@ -115,3 +115,16 @@ a.active {
   color: red;
 }
 
+
+
+/* dit past de grootte van de video aan */
+.video-size {
+  width: 80%; 
+  margin: 0 auto;
+  display: block;
+}
+
+/*dit past de stijl van de restart knop aan */
+#restart-button {
+  display: none; 
+}
