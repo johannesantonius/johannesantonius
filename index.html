@@ -23,8 +23,8 @@
     <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Video</button>
     <button id="restart-button" style="display: none; margin: 10px auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Opnieuw starten</button>
     <div id="youtube-video" style="display: none;">
-      <!-- Plaats hier de nieuwe YouTube-embedcode met autoplay -->
-      <iframe width="1257" height="707" src="https://www.youtube.com/embed/DJmMNrr3pu8?autoplay=1" title="instructiefilmpje website" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <!-- Plaats hier de nieuwe YouTube-embedcode zonder autoplay -->
+      <iframe width="1257" height="707" src="https://www.youtube.com/embed/DJmMNrr3pu8" title="instructiefilmpje website" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
   
@@ -42,6 +42,7 @@
 
       startButton.addEventListener('click', function() {
         youtubeVideo.style.display = 'block';
+        youtubeVideo.src = youtubeVideo.src + "?autoplay=1"; // Voeg "?autoplay=1" toe aan de bron-URL om het afspelen te forceren
         startButton.style.display = 'none';
       });
 
@@ -51,13 +52,11 @@
 
       restartButton.addEventListener('click', function() {
         youtubeVideo.style.display = 'none';
+        youtubeVideo.src = youtubeVideo.src.replace("?autoplay=1", ""); // Verwijder "?autoplay=1" uit de bron-URL
         startButton.style.display = 'block';
         restartButton.style.display = 'none';
       });
     });
-
-  <p>.</p>
-
   </script>
 </body>
 </html>
