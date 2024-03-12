@@ -4,7 +4,7 @@
     </head>
     <body>
         <script>
-            function main() {
+        
     window.alert("Wat is het eerste getal dat u wilt optellen aftrekken vermenigvuldigen of delen ? ");
     var eerstegetal;
 
@@ -206,8 +206,19 @@
     window.alert("Het resultaat is " + resultaat);
 
     // Hier wordt het resultaat gegeven
-}
+
 
         </script>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="index.html">Homepage</a>
+                <a href="page2.html">Computerwerking</a>
+                <a href="binairestelsel.html"class="active">Binairestelsel</a> 
+                <a href="kleurmodellen.html">Kleurmodellen</a>
+                <a href="compressie.html">compressie</a>
+                <a href="flowgorithm">compressie</a>
+              </div>
+        </div>
     </body>
     </html>
