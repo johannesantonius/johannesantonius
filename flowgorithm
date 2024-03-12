@@ -1,0 +1,213 @@
+<html>
+    <head>
+     Rekenmachine   
+    </head>
+    <body>
+        <script>
+            function main() {
+    window.alert("Wat is het eerste getal dat u wilt optellen aftrekken vermenigvuldigen of delen ? ");
+    var eerstegetal;
+
+    eerstegetal = Number(window.prompt('Enter a value for eerstegetal'));
+
+    // Hierboven wordt een real gedeclared en wordt het eerste getal gevraagd om iets mee uit te reken en wordt je gevraagd dat getal in te vullen met de input
+    var kwadraateerstegetal;
+
+    // Hier wordt een string gedeclared voor de vraag of je wilt kwadrateren of worteltrekken
+    var vraageerstegetal;
+
+    window.alert("Wilt u het eerste getal nog kwadrateren of worteltrekken ? ja of nee");
+    vraageerstegetal = window.prompt('Enter a value for vraageerstegetal');
+
+    // Hierboven wordt een string voor de vraag of je wilt kwadrateren of worteltrekken gedeclard en wordt het in tekst gevraagd en kun je het invoeren met input
+    if (vraageerstegetal == "ja") {
+
+        // Als in deze if statement na de vraag het antwoord ja is dan gaat die naar true en anders gaat die verder
+        window.alert("Wilt u het eerste getal kwadrateren of worteltrekken ? ");
+        kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+
+        // Hierboven wordt gevraagd of je wilt kwadrateren of worteltrekken
+        var kwadraatgetal;
+
+        // hier wordt een real gedeclared voor het getal waarmee je gaat kwadrateren
+        if (kwadraateerstegetal == "kwadrateren") {
+            window.alert("Met welk getal wilt u kwadrateren ? ");
+            kwadraatgetal = Number(window.prompt('Enter a value for kwadraatgetal'));
+            eerstegetal = Math.pow(eerstegetal, kwadraatgetal);
+
+            // Hier wordt het getal gevraagd om mee te kwadrateren en wordt dat getal gekwadrateert met het eerste getal
+        } else {
+            if (kwadraateerstegetal == "worteltrekken") {
+                eerstegetal = Math.sqrt(eerstegetal);
+            } else {
+                window.alert("U kunt alleen maar kwadrateren of worteltrekken als antwoord geven om te kwadrateren of worteltrekken");
+            }
+
+            // Hier wordt als er wordt gezegd in de vraag boven de twee ifstatements wortelgetrokken en anders geeft die aan dat er geen andere actie mogelijk is
+        }
+    }
+    var getal;
+
+    // Hier wordt een real gedeclard voor het getal dat elke keer wordt gevraagd bij optellen aftrekken vermenigvuldigen of delen
+    var resultaat;
+
+    resultaat = 0;
+    resultaat = resultaat + eerstegetal;
+
+    // Hierboven wordt een real gedeclared voor het totale resultaat en wordt er gezegd dat het totaal begint bij 0 en dat het eerste getal al bij het totaal gedaan wordt
+    var rekenvraag;
+
+    // Hier wordt een string gedeclard voor de rekenvraag of je wilt delen vermenigvuldigen aftrekken of optellen
+    window.alert("Wilt u het getal nog ergens mee vermenigvuldigen delen optellen of aftrekken (zeg ja) of wilt u het resultaat ? ");
+    var vraag4;
+
+    vraag4 = window.prompt('Enter a value for vraag4');
+    while (vraag4 == "ja") {
+
+        // Deze while loop zorgt ervoor dat als er een getal is ingevuld om te berekenen dat er dan gevraagd wordt of er nog een getal bij moet en op deze manier kan er een oneindig aantal getallen bij komen in plaats van bij een array
+        window.alert("Wilt u optellen aftrekken delen of vermenigvuldigen ? ");
+        rekenvraag = window.prompt('Enter a value for rekenvraag');
+
+        // Hier wordt gevraagd of je wilt vermenigvuldigen delen aftrekken of optellen
+        if (rekenvraag == "optellen") {
+
+            // hiernaast elkaar staan 4 if statements die eigenlijk allemaal hetzelfde werken behalve voor dat ze allemaal iets ander doen
+            window.alert("Voer een getal in");
+            getal = Number(window.prompt('Enter a value for getal'));
+
+            // Hier wordt gevraagd welk getal je wilt vermenigvuldigen
+            window.alert("Wilt u nog kwadrateren of worteltrekken ? ");
+            vraageerstegetal = window.prompt('Enter a value for vraageerstegetal');
+
+            // Hier wordt gevraagd of je nog wilt kwadrateren of worteltrekken
+            if (vraageerstegetal == "ja") {
+
+                // Het kwadraat en wortelgedeelte werkt hetzelfde als die aan het begin
+                var kwadraatgetal2;
+
+                window.alert("Wilt u kwadrateren of worteltrekken ? ");
+                kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                if (kwadraateerstegetal == "kwadrateren") {
+                    var kwadraatgetalkeer;
+
+                    window.alert("Met welk getal wilt u kwadrateren ? ");
+                    kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                    if (kwadraateerstegetal == "kwadrateren") {
+                        kwadraatgetalkeer = Number(window.prompt('Enter a value for kwadraatgetalkeer'));
+                        getal = Math.pow(getal, kwadraatgetalkeer);
+                    } else {
+                        if (kwadraateerstegetal == "worteltrekken") {
+                            getal = Math.sqrt(getal);
+                        } else {
+                            window.alert("Het antwoord kan alleen kwadrateren of worteltrekken zijn ");
+                        }
+                    }
+                }
+            }
+            resultaat = resultaat + getal;
+
+            // Hierboven staat het gedeelte wat verschilt met de andere 3 if statements en zorgt ervoor dat in dit geval het getal wat net is gemaakt opgeteld wordt bij het totaal
+        } else {
+            if (rekenvraag == "aftrekken") {
+                window.alert("Voer een getal in");
+                getal = Number(window.prompt('Enter a value for getal'));
+                window.alert("Wilt u nog kwadrateren of worteltrekken ? ");
+                vraageerstegetal = window.prompt('Enter a value for vraageerstegetal');
+                if (vraageerstegetal == "ja") {
+                    var kwadraatgetal2;
+
+                    window.alert("Wilt u kwadrateren of worteltrekken ? ");
+                    kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                    if (kwadraateerstegetal == "kwadrateren") {
+                        var kwadraatgetalkeer;
+
+                        window.alert("Met welk getal wilt u kwadrateren ? ");
+                        kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                        if (kwadraateerstegetal == "kwadrateren") {
+                            kwadraatgetalkeer = Number(window.prompt('Enter a value for kwadraatgetalkeer'));
+                            getal = Math.pow(getal, kwadraatgetalkeer);
+                        } else {
+                            if (kwadraateerstegetal == "worteltrekken") {
+                                getal = Math.sqrt(getal);
+                            } else {
+                                window.alert("Het antwoord kan alleen kwadrateren of worteltrekken zijn ");
+                            }
+                        }
+                    }
+                }
+                resultaat = resultaat - getal;
+            } else {
+                if (rekenvraag == "delen") {
+                    window.alert("Voer een getal in");
+                    getal = Number(window.prompt('Enter a value for getal'));
+                    window.alert("Wilt u nog kwadrateren of worteltrekken ? ");
+                    vraageerstegetal = window.prompt('Enter a value for vraageerstegetal');
+                    if (vraageerstegetal == "ja") {
+                        var kwadraatgetal2;
+
+                        window.alert("Wilt u kwadrateren of worteltrekken ? ");
+                        kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                        if (kwadraateerstegetal == "kwadrateren") {
+                            var kwadraatgetalkeer;
+
+                            window.alert("Met welk getal wilt u kwadrateren ? ");
+                            kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                            if (kwadraateerstegetal == "kwadrateren") {
+                                kwadraatgetalkeer = Number(window.prompt('Enter a value for kwadraatgetalkeer'));
+                                getal = Math.pow(getal, kwadraatgetalkeer);
+                            } else {
+                                if (kwadraateerstegetal == "worteltrekken") {
+                                    getal = Math.sqrt(getal);
+                                } else {
+                                    window.alert("Het antwoord kan alleen kwadrateren of worteltrekken zijn ");
+                                }
+                            }
+                        }
+                    }
+                    resultaat = resultaat / getal;
+                } else {
+                    if (rekenvraag == "vermenigvuldigen") {
+                        window.alert("Voer een getal in");
+                        getal = Number(window.prompt('Enter a value for getal'));
+                        window.alert("Wilt u nog kwadrateren of worteltrekken ? ");
+                        vraageerstegetal = window.prompt('Enter a value for vraageerstegetal');
+                        if (vraageerstegetal == "ja") {
+                            var kwadraatgetal2;
+
+                            window.alert("Wilt u kwadrateren of worteltrekken ? ");
+                            kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                            if (kwadraateerstegetal == "kwadrateren") {
+                                var kwadraatgetalkeer;
+
+                                window.alert("Met welk getal wilt u kwadrateren ? ");
+                                kwadraateerstegetal = window.prompt('Enter a value for kwadraateerstegetal');
+                                if (kwadraateerstegetal == "kwadrateren") {
+                                    kwadraatgetalkeer = Number(window.prompt('Enter a value for kwadraatgetalkeer'));
+                                    getal = Math.pow(getal, kwadraatgetalkeer);
+                                } else {
+                                    if (kwadraateerstegetal == "worteltrekken") {
+                                        getal = Math.sqrt(getal);
+                                    } else {
+                                        window.alert("Het antwoord kan alleen kwadrateren of worteltrekken zijn ");
+                                    }
+                                }
+                            }
+                        }
+                        resultaat = resultaat * getal;
+                    }
+                }
+            }
+        }
+        window.alert("Wilt u nog een getal erbij doen ? ja of nee ");
+
+        // Hier wordt gevraagd of je nog een getal wilt invullen en als je antwoord ja is dan gaat die weer naar het begin van de loop en begint die weer opnieuw anders geeft die het resultaat
+        vraag4 = window.prompt('Enter a value for vraag4');
+    }
+    window.alert("Het resultaat is " + resultaat);
+
+    // Hier wordt het resultaat gegeven
+}
+
+        </script>
+    </body>
+    </html>
