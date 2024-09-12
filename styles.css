@@ -63,6 +63,7 @@ footer {
 /* Deze regels stijlen de dropdowncontainer en knop. */
 .dropdown {
   position: relative;
+  padding-top: 10px 20px;
   width: 20%; /* zorgt ervoor dat het menu een balk over de hele breedte wordt wanneer je er met je muis over heen gaat */
 }
 
