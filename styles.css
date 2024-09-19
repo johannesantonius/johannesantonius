@@ -47,10 +47,10 @@ footer {
 /* Navigation links */
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding:20px 20px;
   text-decoration: none;
 }
 
@@ -62,11 +62,11 @@ footer {
 
 /* Subnav button */
 .subnav .subnavbtn {
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding: 20px 20px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -81,7 +81,7 @@ footer {
 .subnav-content {
   display: none;
   position: absolute;
-  left: 0;
+  center: 0;
   background-color: rgb(76, 0, 255);
   width: 100%;
   z-index: 1;
