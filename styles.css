@@ -38,71 +38,70 @@ footer {
 
 
 
-/* Deze regels stijlen het dropdown menu en de bijbehorende knop. */
-.menu {
-  position: relative;
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
 }
 
-.menu-button {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ce0e0e;
-  padding: 10px;
-  border: 1px solid #e41616;
+/* Navigation links */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-/* Deze regel laat de menuknop zien wanneer je met de muis over de knop gaat. */
-.menu:hover .menu-button {
-  display: block;
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
 }
 
-
-
-/* Deze regels stijlen de dropdowncontainer en knop. */
-.dropdown {
-  position: absolute;
-  padding-top: 10px 20px;
-  width: 100%; /* zorgt ervoor dat het menu een balk over de hele breedte wordt wanneer je er met je muis over heen gaat */
-}
-
-.dropdown .dropbtn {
-  background-color: #ff0000;
-  color: #000000;
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px;
   border: none;
-  padding: 20px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%; /* bepaald de breedte van de dropdown */
-  text-align: center; /* zet de tekst van de knop in het midden */
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
-/* Deze regels stijlen de inhoud van de dropdown, waardoor deze verborgen is totdat je over de knop zweeft. */
-.dropdown .dropdown-content {
+/* Add a red background color to navigation links on hover */
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
   display: none;
   position: absolute;
-  background-color: #ff0000;
-  min-width: 100%; /* Volledige breedte van de dropdown */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  left: 0;
+  background-color: red;
+  width: 100%;
   z-index: 1;
 }
 
-/* Deze regels stijlen de links binnen de dropdown. */
-.dropdown .dropdown-content a {
-  color: #000000;
-  padding: 12px 16px;
+/* Style the subnav links */
+.subnav-content a {
+  float: left;
+  color: white;
   text-decoration: none;
-  display: block;
 }
 
-/* Deze regel verandert de achtergrondkleur van de dropdown-links wanneer je er met de muis overheen gaat. */
-.dropdown .dropdown-content a:hover {
-  background-color: #ddd;
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
 }
 
-/* Deze regel laat de dropdowninhoud zien wanneer je over de dropdown zweeft. */
-.dropdown:hover .dropdown-content {
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
   display: block;
 }
 
