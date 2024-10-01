@@ -69,7 +69,7 @@ body {
 .subnav-content {
   display: none;
   position: absolute;
-  left: 0; /* Align de dropdown aan de linkerkant */
+  top: 0; /* Align de dropdown aan de linkerkant */
   background-color: rgb(76, 0, 255);
   width: 100%; /* Volledige breedte van de subnav */
   z-index: 1;
