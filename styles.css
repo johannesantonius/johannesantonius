@@ -46,7 +46,7 @@ footer {
 
 /* Navigation links */
 .navbar a {
-  float: left;
+  float: center;
   font-size: 20px;
   color: white;
   text-align: center;
@@ -56,7 +56,7 @@ footer {
 
 /* The subnavigation menu */
 .subnav {
-  float: left;
+  float: center;
   overflow: hidden;
 }
 
@@ -89,7 +89,7 @@ footer {
 
 /* Style the subnav links */
 .subnav-content a {
-  float: left;
+  float: center;
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
