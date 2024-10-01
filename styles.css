@@ -37,7 +37,6 @@ footer {
 }
 
 
-
 .navbar {
   display: flex;
   justify-content: center; /* Center the nav items */
@@ -53,6 +52,7 @@ footer {
   padding: 20px 0; /* Adjusted padding for uniformity */
   text-decoration: none;
   transition: background-color 0.3s; /* Smooth transition on hover */
+  min-width: 150px; /* Minimum width for all buttons */
 }
 
 .subnav {
@@ -81,6 +81,8 @@ footer {
   color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 10px; /* Add padding to subnav links */
+  text-align: center; /* Center text for subnav links */
+  min-width: 150px; /* Minimum width for subnav links */
 }
 
 .subnav-content a:hover {
@@ -92,7 +94,6 @@ a.active {
   font-weight: bold;
   color: red;
 }
-
 
 
 /* dit past de grootte van de video aan */
