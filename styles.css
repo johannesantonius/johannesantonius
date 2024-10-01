@@ -36,35 +36,42 @@ footer {
   color: white;
 }
 
+body {
+  margin: 0; /* Verwijder standaard margin van de body */
+}
 
 .navbar {
   display: flex;
-  justify-content: center; /* Center the nav items */
+  justify-content: center; /* Center de nav items */
   background-color: #333333;
-  padding: 10px 0; /* Adds some vertical spacing */
+  padding: 10px 0; /* Voeg verticale ruimte toe */
+  position: fixed; /* Maak de navbar vast bovenaan */
+  width: 100%; /* Zorg dat de navbar de volledige breedte heeft */
+  top: 0; /* Positioneer de navbar aan de bovenkant */
+  z-index: 1000; /* Zorg ervoor dat de navbar boven andere elementen staat */
 }
 
 .navbar a, .subnav .subnavbtn {
-  flex: 1; /* Make all buttons equal width */
+  flex: 1; /* Maak alle knoppen gelijk in breedte */
   font-size: 20px;
   color: rgb(0, 0, 0);
   text-align: center;
-  padding: 20px 0; /* Adjusted padding for uniformity */
+  padding: 20px 0; /* Aangepaste padding voor uniformiteit */
   text-decoration: none;
   transition: background-color 0.3s; /* Smooth transition on hover */
-  min-width: 150px; /* Minimum width for all buttons */
+  min-width: 150px; /* Minimale breedte voor alle knoppen */
 }
 
 .subnav {
-  position: relative; /* Position relative for the dropdown */
+  position: relative; /* Positioneer subnav relatief */
 }
 
 .subnav-content {
   display: none;
   position: absolute;
-  left: 0; /* Align the dropdown to the left */
+  left: 0; /* Align de dropdown aan de linkerkant */
   background-color: rgb(76, 0, 255);
-  width: 100%; /* Full width of the subnav */
+  width: 100%; /* Volledige breedte van de subnav */
   z-index: 1;
 }
 
@@ -77,12 +84,12 @@ footer {
 }
 
 .subnav-content a {
-  display: block; /* Make links stack vertically */
+  display: block; /* Maak links verticaal gestapeld */
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 10px; /* Add padding to subnav links */
-  text-align: center; /* Center text for subnav links */
-  min-width: 150px; /* Minimum width for subnav links */
+  padding: 10px; /* Voeg padding toe aan subnav links */
+  text-align: center; /* Center tekst voor subnav links */
+  min-width: 150px; /* Minimale breedte voor subnav links */
 }
 
 .subnav-content a:hover {
