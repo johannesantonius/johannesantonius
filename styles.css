@@ -52,14 +52,14 @@ body {
 }
 
 .navbar a {
-  flex: 1; /* Maak alle knoppen gelijk in breedte */
   font-size: 20px;
   color: rgb(255, 255, 255); /* Verander kleur naar wit voor beter contrast */
   text-align: center;
-  padding: 15px; /* Aangepaste padding voor uniformiteit */
+  padding: 15px 30px; /* Aangepaste padding voor uniformiteit en ruimte rondom de tekst */
   text-decoration: none;
   transition: background-color 0.3s; /* Smooth transition on hover */
-  min-width: 150px; /* Minimale breedte voor alle knoppen */
+  margin: 0 10px; /* Voeg ruimte tussen de knoppen toe */
+  white-space: nowrap; /* Zorg ervoor dat de tekst niet wordt gebroken */
 }
 
 
