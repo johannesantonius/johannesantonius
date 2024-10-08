@@ -51,16 +51,17 @@ body {
   z-index: 1000; /* Zorg ervoor dat de navbar boven andere elementen staat */
 }
 
-.navbar a, .subnav .subnavbtn {
+.navbar a {
   flex: 1; /* Maak alle knoppen gelijk in breedte */
   font-size: 20px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255); /* Verander kleur naar wit voor beter contrast */
   text-align: center;
-  padding: 20px 0; /* Aangepaste padding voor uniformiteit */
+  padding: 15px; /* Aangepaste padding voor uniformiteit */
   text-decoration: none;
   transition: background-color 0.3s; /* Smooth transition on hover */
   min-width: 150px; /* Minimale breedte voor alle knoppen */
 }
+
 
 .subnav {
   position: relative; /* Positioneer subnav relatief */
