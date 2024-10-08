@@ -45,7 +45,7 @@ body {
   justify-content: center; /* Center de nav items */
   background-color: #333333;
   padding: 10px 0; /* Voeg verticale ruimte toe */
-  position: fixed; /* Maak de navbar vast bovenaan */
+  position: absolute; /* Maak de navbar vast bovenaan */
   width: 100%; /* Zorg dat de navbar de volledige breedte heeft */
   top: 0; /* Positioneer de navbar aan de bovenkant */
   z-index: 1000; /* Zorg ervoor dat de navbar boven andere elementen staat */
@@ -69,7 +69,7 @@ body {
 .subnav-content {
   display: none;
   position: absolute;
-  top: 0; /* Align de dropdown aan de linkerkant */
+  top: center; /* Align de dropdown aan de linkerkant */
   background-color: rgb(76, 0, 255);
   width: 100%; /* Volledige breedte van de subnav */
   z-index: 1;
