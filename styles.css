@@ -1,13 +1,12 @@
-/* styles.css */
-
 /* Deze regels stijlen de <h1>code. Ze geven het een specifiek lettertype, grootte en centreren de tekst. */
 h1 {
   font-family: verdana;
   font-size: 300%;
   text-align: center;
 }
+
 /* deze regels gaan over h2 en doen hetzelfde als h1 */
-h2{
+h2 {
   font-family: verdana;
   font-size: 150%;
 }
@@ -24,7 +23,6 @@ body {
   margin: 0; 
 }
 
-
 /* Deze regels stijlen de footer onderaan de pagina zoals kleur grootte en de plaats van de tekst */
 footer {
   position: fixed;
@@ -36,10 +34,7 @@ footer {
   color: white;
 }
 
-body {
-  margin: 0; /* Verwijder standaard margin van de body */
-}
-
+/* Navbar stijlen */
 .navbar {
   display: flex;
   justify-content: center; /* Center de nav items */
@@ -62,15 +57,15 @@ body {
   white-space: nowrap; /* Zorg ervoor dat de tekst niet wordt gebroken */
 }
 
-
+/* Subnav stijlen */
 .subnav {
-  position: relative; /* Positioneer subnav relatief */
+  display: inline-block; /* Zorgt ervoor dat subnavs naast elkaar komen te staan */
+  margin: 0 10px; /* Voeg wat ruimte toe tussen de subnavs */
 }
 
 .subnav-content {
   display: none;
   position: absolute;
-  top: center; /* Align de dropdown aan de linkerkant */
   background-color: rgb(76, 0, 255);
   width: 100%; /* Volledige breedte van de subnav */
   z-index: 1;
@@ -78,6 +73,12 @@ body {
 
 .subnav:hover .subnav-content {
   display: block;
+}
+
+.subnav-container {
+  display: flex; /* Flexbox gebruiken om ze te centreren */
+  justify-content: center; /* Center de subnavs */
+  margin-top: 20px; /* Voeg wat ruimte bovenaan toe als dat nodig is */
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
@@ -102,7 +103,6 @@ a.active {
   font-weight: bold;
   color: red;
 }
-
 
 /* dit past de grootte van de video aan */
 .video-size {
