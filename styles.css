@@ -67,7 +67,7 @@ footer {
   display: none;
   position: absolute;
   background-color: rgb(76, 0, 255);
-  width: 100%; /* Volledige breedte van de subnav */
+  width: 20%; /* Volledige breedte van de subnav */
   z-index: 1;
 }
 
@@ -78,7 +78,7 @@ footer {
 .subnav-container {
   display: flex; /* Flexbox gebruiken om ze te centreren */
   justify-content: center; /* Center de subnavs */
-  margin-top: 20px; /* Voeg wat ruimte bovenaan toe als dat nodig is */
+  margin-top: 50%; /* Voeg wat ruimte bovenaan toe als dat nodig is */
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
