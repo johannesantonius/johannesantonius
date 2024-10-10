@@ -78,7 +78,7 @@ footer {
 .subnav-container {
   display: flex; /* Flexbox gebruiken om ze te centreren */
   justify-content: center; /* Center de subnavs */
-  margin-top: 50%; /* Voeg wat ruimte bovenaan toe als dat nodig is */
+  margin-top: 0%; /* Voeg wat ruimte bovenaan toe als dat nodig is */
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
