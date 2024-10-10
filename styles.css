@@ -64,9 +64,9 @@ footer {
 
 .subnav-content {
   display: none;
-  position: absolute;
+  position: center;
   background-color: rgb(76, 0, 255);
-  width: 20%; 
+  width: 15%; 
   z-index: 1;
 }
 
