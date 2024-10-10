@@ -34,40 +34,39 @@ footer {
   color: white;
 }
 
-/* Navbar stijlen */
 .navbar {
   display: flex;
-  justify-content: center; /* Center de nav items */
+  justify-content: center; 
   background-color: #333333;
-  padding: 10px 0; /* Voeg verticale ruimte toe */
-  position: absolute; /* Maak de navbar vast bovenaan */
-  width: 20%; /* Zorg dat de navbar de volledige breedte heeft */
-  top: 0; /* Positioneer de navbar aan de bovenkant */
-  z-index: 1000; /* Zorg ervoor dat de navbar boven andere elementen staat */
+  padding: 10px 0; 
+  position: absolute; 
+  width: 20%; 
+  top: 0; 
+  z-index: 1000; 
 }
 
 .navbar a {
   font-size: 20px;
-  color: rgb(255, 255, 255); /* Verander kleur naar wit voor beter contrast */
+  color: rgb(255, 255, 255); 
   text-align: center;
-  padding: 15px 30px; /* Aangepaste padding voor uniformiteit en ruimte rondom de tekst */
+  padding: 15px 30px; 
   text-decoration: none;
-  transition: background-color 0.3s; /* Smooth transition on hover */
-  margin: 0 10px; /* Voeg ruimte tussen de knoppen toe */
-  white-space: nowrap; /* Zorg ervoor dat de tekst niet wordt gebroken */
+  transition: background-color 0.3s; 
+  margin: 0 10px; 
+  white-space: nowrap;
 }
 
-/* Subnav stijlen */
+
 .subnav {
-  display: inline-block; /* Zorgt ervoor dat subnavs naast elkaar komen te staan */
-  margin: 0 10px; /* Voeg wat ruimte toe tussen de subnavs */
+  display: inline-block; 
+  margin: 0 10px; 
 }
 
 .subnav-content {
   display: none;
   position: absolute;
   background-color: rgb(76, 0, 255);
-  width: 20%; /* Volledige breedte van de subnav */
+  width: 20%; 
   z-index: 1;
 }
 
@@ -76,9 +75,9 @@ footer {
 }
 
 .subnav-container {
-  display: flex; /* Flexbox gebruiken om ze te centreren */
-  justify-content: center; /* Center de subnavs */
-  margin-top: 0%; /* Voeg wat ruimte bovenaan toe als dat nodig is */
+  display: flex; 
+  justify-content: center; 
+  margin-top: 0%; 
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
@@ -86,12 +85,12 @@ footer {
 }
 
 .subnav-content a {
-  display: block; /* Maak links verticaal gestapeld */
+  display: block; 
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 10px; /* Voeg padding toe aan subnav links */
-  text-align: center; /* Center tekst voor subnav links */
-  min-width: 50%; /* Minimale breedte voor subnav links */
+  padding: 10px; 
+  text-align: center; 
+  min-width: 50%; 
 }
 
 .subnav-content a:hover {
