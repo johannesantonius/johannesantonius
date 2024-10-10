@@ -91,7 +91,7 @@ footer {
   text-decoration: none;
   padding: 10px; /* Voeg padding toe aan subnav links */
   text-align: center; /* Center tekst voor subnav links */
-  min-width: 150px; /* Minimale breedte voor subnav links */
+  min-width: 50%; /* Minimale breedte voor subnav links */
 }
 
 .subnav-content a:hover {
