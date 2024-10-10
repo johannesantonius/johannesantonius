@@ -41,7 +41,7 @@ footer {
   background-color: #333333;
   padding: 10px 0; /* Voeg verticale ruimte toe */
   position: absolute; /* Maak de navbar vast bovenaan */
-  width: 100%; /* Zorg dat de navbar de volledige breedte heeft */
+  width: 20%; /* Zorg dat de navbar de volledige breedte heeft */
   top: 0; /* Positioneer de navbar aan de bovenkant */
   z-index: 1000; /* Zorg ervoor dat de navbar boven andere elementen staat */
 }
