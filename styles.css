@@ -20,7 +20,7 @@ p {
 /* Deze regels stijlen de achtergrondkleur van de hele pagina naar poederblauw en verwijderen de standaard marges. */
 body {
   background-color: powderblue;
-  margin: 0; 
+  margin: 0;
 }
 
 /* Deze regels stijlen de footer onderaan de pagina zoals kleur grootte en de plaats van de tekst */
@@ -34,39 +34,38 @@ footer {
   color: white;
 }
 
+/* De navbar wordt centraal geplaatst, en stijlen voor de links */
 .navbar {
   display: flex;
   justify-content: center; 
   background-color: #333333;
-  padding: 10px 0; 
-  position: center; 
-  width: 20%; 
-  top: 0; 
-  z-index: 1000; 
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar a {
   font-size: 20px;
-  color: rgb(255, 255, 255); 
+  color: rgb(255, 255, 255);
   text-align: center;
-  padding: 15px 30px; 
+  padding: 15px 30px;
   text-decoration: none;
-  transition: background-color 0.3s; 
-  margin: 0 10px; 
+  transition: background-color 0.3s;
+  margin: 0 10px;
   white-space: nowrap;
 }
 
-
 .subnav {
-  display: inline-block; 
-  margin: 0 10px; 
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .subnav-content {
   display: none;
   position: absolute;
   background-color: rgb(76, 0, 255);
-  width: 15%; 
+  width: 15%;
   z-index: 1;
 }
 
@@ -75,9 +74,9 @@ footer {
 }
 
 .subnav-container {
-  display: flex; 
-  justify-content: center; 
-  margin-top: center; 
+  display: flex;
+  justify-content: center;
+  margin-top: center;
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
@@ -85,12 +84,12 @@ footer {
 }
 
 .subnav-content a {
-  display: block; 
+  display: block;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 10px; 
-  text-align: center; 
-  min-width: 50%; 
+  padding: 10px;
+  text-align: center;
+  min-width: 50%;
 }
 
 .subnav-content a:hover {
@@ -103,14 +102,38 @@ a.active {
   color: red;
 }
 
-/* dit past de grootte van de video aan */
+/* Dit past de grootte van de video aan */
 .video-size {
-  width: 80%; 
+  width: 80%;
   margin: 0 auto;
   display: block;
 }
 
-/*dit past de stijl van de restart knop aan */
+/* Dit past de stijl van de restart knop aan */
 #restart-button {
-  display: none; 
+  display: none;
+}
+
+/* Nieuw toegevoegd voor de knoppen Leerjaar 1 en Leerjaar 2 */
+.button-container {
+  display: flex; /* Flexbox om de knoppen naast elkaar te plaatsen */
+  justify-content: center; /* Centreer de knoppen horizontaal */
+  align-items: center; /* Centreer de knoppen verticaal */
+  height: 100vh; /* Zorg ervoor dat de container de volledige hoogte van het scherm heeft */
+}
+
+.button {
+  background-color: #4CAF50; /* Groene achtergrondkleur voor de knoppen */
+  color: white;              /* Witte tekstkleur */
+  padding: 10px 20px;        /* Padding rondom de knop */
+  margin: 0 10px;            /* Ruimte tussen de knoppen */
+  border: none;              /* Verwijder de rand van de knop */
+  border-radius: 5px;        /* Maak de hoeken van de knop afgerond */
+  cursor: pointer;           /* Verander de cursor naar een handje bij hover */
+  font-size: 16px;           /* Vergroot de tekst van de knoppen */
+  transition: background-color 0.3s ease; /* Voeg een overgang toe voor de achtergrondkleur */
+}
+
+.button:hover {
+  background-color: #45a049; /* Maak de achtergrondkleur iets donkerder bij hover */
 }

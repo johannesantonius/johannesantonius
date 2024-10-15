@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css"><!--koppelt de css aan de pagina-->
+  <title>Website</title>
 </head>
 <body>
- 
-  <div class="subnav">
-    <button class="subnavbtn">leerjaar1</button>
-    <div class="subnav-content">
-          <a href="index.html">Homepage</a>
-          <a href="page2.html">Computerwerking</a>
-          <a href="binairestelsel.html">Binairestelsel</a> 
-          <a href="kleurmodellen.html">Kleurmodellen</a>
-          <a href="compressie.html">compressie</a>
-          <a href="flowgorithm.html">flowgorithm.start rekenmachine</a>
-        </div>
-    </div>    
-    
-    <div class="subnav">
-      <button class="subnavbtn">leerjaar2</button>
-      <div class="subnav-content">
-          <a href="index.html">Homepage</a>
-          <a href="3 lagenmodel.html">3 lagenmodel</a>
-        <a href=¨cpu.html¨>cpu</a>
-      </div>
+  <!-- De navigatieknoppen voor leerjaar 1 en leerjaar 2 -->
+  <div class="button-container">
+    <button class="button">Leerjaar 1</button>
+    <button class="button">Leerjaar 2</button>
   </div>
-  
+
   <h1>Homepage</h1><!--dit is een header-->
   <p style="text-align:center;">Welkom op mijn website.</p><!--dit is een paragraaf gestijld met inline css om te zorgen dat de text in het midden staat-->
-  <h2 style="text-align:center;">over mij</h2>
+  <h2 style="text-align:center;">Over mij</h2>
   <p style="text-align:center;">Hoi ik ben Dirk Straathof, ik ben 15 jaar oud en mijn hobby is sleutelen. Als sport zit ik op schaatsen en ik geef ook training.</p>
   <p style="text-align:center;">Dit is een instructiefilmpje over de website. Druk op de startknop om te starten en op de opnieuw starten knop om opnieuw te kijken.</p>
-  <div style="text-align: center;"><!-- de volgende knoppen zijn voor de start en herstartknop van de instructievideo-->
+
+  <div style="text-align: center;">
+    <!-- De knoppen voor de start en herstartknop van de instructievideo -->
     <button id="start-button" style="display: block; margin: 0 auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Start Video</button>
     <button id="restart-button" style="display: none; margin: 10px auto; padding: 10px 20px; font-size: 18px; background-color: #4caf50; color: white; border: none; cursor: pointer; transition: background-color 0.3s;">Opnieuw starten</button>
     <div id="youtube-video" style="display: none;">
@@ -41,13 +30,15 @@
   </div>
 
   <p>.</p>
-  <!--De volgende regels zijn voor de footer van de pagina en is zo gestijld dat de footer altijd op de bodem van de pagina blijft ook al scroll je naar beneden-->
+
+  <!-- De footer van de pagina, blijft altijd op de bodem van de pagina -->
   <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: red; text-align: center; padding: 3px; color: white;">
     <div>
       <p>Dirk Straathof: versie 1</p>
     </div>
   </footer>
- <!--de volgende regels zijn voor de functionaliteit van de knoppen van de instructievideo-->
+
+  <!-- De functionaliteit van de knoppen voor de instructievideo -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const startButton = document.getElementById('start-button');
