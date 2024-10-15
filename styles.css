@@ -1,29 +1,67 @@
-/* Deze regels stijlen de <h1>code. Ze geven het een specifiek lettertype, grootte en centreren de tekst. */
-h1 {
-  font-family: verdana;
-  font-size: 300%;
+/* Stijlen voor de subnav (de dropdown menu's) */
+.subnav {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.subnavbtn {
+  background-color: #333333;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+/* Wanneer je over de knop beweegt */
+.subnavbtn:hover {
+  background-color: rgb(140, 255, 0);
+}
+
+/* Het dropdownmenu */
+.subnav-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(76, 0, 255);
+  width: 200px; /* Pas de breedte aan naar wens */
+  z-index: 1;
+}
+
+/* Weergave van het dropdownmenu bij hover */
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+.subnav-content a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
   text-align: center;
 }
 
-/* deze regels gaan over h2 en doen hetzelfde als h1 */
-h2 {
-  font-family: verdana;
-  font-size: 150%;
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
 }
 
-/* Deze regels stijlen de <p>code. Ze geven de tekst een zwarte kleur en centreren deze. */
-p {
-  color: rgb(0, 0, 0);
-  text-align: left;
+/* Stijlen voor de algemene navbar */
+.navbar {
+  display: flex;
+  justify-content: center; 
+  background-color: #333333;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
 }
 
-/* Deze regels stijlen de achtergrondkleur van de hele pagina naar poederblauw en verwijderen de standaard marges. */
-body {
-  background-color: powderblue;
-  margin: 0;
-}
-
-/* Deze regels stijlen de footer onderaan de pagina zoals kleur grootte en de plaats van de tekst */
+/* Stijlen voor de footer */
 footer {
   position: fixed;
   bottom: 0;
@@ -34,106 +72,25 @@ footer {
   color: white;
 }
 
-/* De navbar wordt centraal geplaatst, en stijlen voor de links */
-.navbar {
-  display: flex;
-  justify-content: center; 
-  background-color: #333333;
-  padding: 10px 0;
-  position: relative;
-  width: 100%;
-  z-index: 1000;
-}
-
-.navbar a {
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  padding: 15px 30px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-
-.subnav {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.subnav-content {
-  display: none;
-  position: absolute;
-  background-color: rgb(76, 0, 255);
-  width: 15%;
-  z-index: 1;
-}
-
-.subnav:hover .subnav-content {
-  display: block;
-}
-
-.subnav-container {
+/* Stijlen voor de knoppen op de homepage */
+.button-container {
   display: flex;
   justify-content: center;
-  margin-top: center;
-}
-
-.navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: rgb(140, 255, 0);
-}
-
-.subnav-content a {
-  display: block;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  padding: 10px;
-  text-align: center;
-  min-width: 50%;
-}
-
-.subnav-content a:hover {
-  background-color: #eee;
-  color: black;
-}
-
-a.active {
-  font-weight: bold;
-  color: red;
-}
-
-/* Dit past de grootte van de video aan */
-.video-size {
-  width: 80%;
-  margin: 0 auto;
-  display: block;
-}
-
-/* Dit past de stijl van de restart knop aan */
-#restart-button {
-  display: none;
-}
-
-/* Nieuw toegevoegd voor de knoppen Leerjaar 1 en Leerjaar 2 */
-.button-container {
-  display: flex; /* Flexbox om de knoppen naast elkaar te plaatsen */
-  justify-content: center; /* Centreer de knoppen horizontaal */
-  align-items: center; /* Centreer de knoppen verticaal */
-  height: 100vh; /* Zorg ervoor dat de container de volledige hoogte van het scherm heeft */
+  margin-top: 20px;
 }
 
 .button {
-  background-color: #4CAF50; /* Groene achtergrondkleur voor de knoppen */
-  color: white;              /* Witte tekstkleur */
-  padding: 10px 20px;        /* Padding rondom de knop */
-  margin: 0 10px;            /* Ruimte tussen de knoppen */
-  border: none;              /* Verwijder de rand van de knop */
-  border-radius: 5px;        /* Maak de hoeken van de knop afgerond */
-  cursor: pointer;           /* Verander de cursor naar een handje bij hover */
-  font-size: 16px;           /* Vergroot de tekst van de knoppen */
-  transition: background-color 0.3s ease; /* Voeg een overgang toe voor de achtergrondkleur */
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #45a049; /* Maak de achtergrondkleur iets donkerder bij hover */
+  background-color: #45a049;
 }
