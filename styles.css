@@ -97,3 +97,9 @@ footer {
 .button:hover {
   background-color: #45a049;
 }
+.center{ 
+   display: block;
+  margin-left: 0%;
+  margin-right: 100%;
+  width: 50%;
+}
